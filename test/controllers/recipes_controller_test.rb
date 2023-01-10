@@ -10,5 +10,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_response :success
     assert_select "title", "Rezeptbuch"
+    assert_select "h1", "Rezeptbuch"
+    assert_includes "body", "Willkommen"
   end
 end
