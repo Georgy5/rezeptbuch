@@ -5,4 +5,10 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     get recipes_index_url
     assert_response :success
   end
+
+  test "should get home" do
+    get root_path
+    assert_response :success
+    assert_select "title", "Rezeptbuch"
+  end
 end
