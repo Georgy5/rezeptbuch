@@ -11,6 +11,6 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Rezeptbuch"
     assert_select "h1", "Rezeptbuch"
-    assert_includes "body", "Willkommen"
+    assert_select "body", /^Willkommen/
   end
 end
