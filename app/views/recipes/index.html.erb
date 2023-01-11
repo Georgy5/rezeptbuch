@@ -1,6 +1,8 @@
 <h1>Rezeptbuch</h1>
 <p>Willkommen bei Ihrem Rezeptbuch</p>
 
+<%= link_to "Neues Gericht hinzufügen", new_recipe_path%>
+
 <h2>Was koche ich heute?</h2>
 <ul>
   <% @recipes.each do | recipe |%>
