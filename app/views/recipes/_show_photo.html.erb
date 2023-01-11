@@ -1,0 +1,7 @@
+<% if @recipe.photo.attached? %>
+  <%= cl_image_tag(@recipe.photo.key,
+  width: 400, height: 300, crop: :fill) %>
+<% else %>
+  <%= cl_image_tag("lu30tfaxelrsc7eyfh8a_r9pm7z",
+    width: 400, height: 300, crop: :fill) %>
+<% end %>

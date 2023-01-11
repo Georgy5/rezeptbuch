@@ -1,15 +1,12 @@
 <%= link_to "Zurück", root_path %>
 <h1><%= @recipe.title %></h1>
 <p>Autor: <%= @recipe.author %></p>
+<button type="button">
+  <%= link_to "Rezept anpassen", edit_recipe_path(@recipe) %>
+</button>
+
 <h2>Beschreibung</h2>
 <p><%= @recipe.description %></p>
-<% if @recipe.photo.attached? %>
-  <%= cl_image_tag(@recipe.photo.key,
-  width: 400, height: 300, crop: :fill) %>
-<% else %>
-  <%= cl_image_tag("lu30tfaxelrsc7eyfh8a_r9pm7z",
-    width: 400, height: 300, crop: :fill) %>
-<% end %>
-
+<%= render "show_photo" %>
 <hr>
 <%= link_to "Zurück", root_path %>

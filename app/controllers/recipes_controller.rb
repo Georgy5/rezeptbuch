@@ -22,6 +22,22 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+      # TODO Implement flash messages
+      # flash[:success] = "Rezept aktualisiert"
+      # redirect_to recipe_path(@recipe)
+      redirect_to recipes_path
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+  end
+
   private
 
   def recipe_params
