@@ -38,6 +38,13 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy
+    Recipe.find(params[:id]).destroy
+    # TODO Implement flash messages
+      # flash[:success] = "Rezept gelöscht"
+    redirect_to recipes_path, status: :see_other
+  end
+
   private
 
   def recipe_params

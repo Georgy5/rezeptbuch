@@ -7,6 +7,11 @@
 
 <h2>Beschreibung</h2>
 <p><%= @recipe.description %></p>
-<%= render "show_photo" %>
+<p><%= render "show_photo" %></p>
+<button type="button">
+  <%= link_to "Rezept löschen", recipe_path(@recipe),
+  data: { "turbo-method": :delete,
+    turbo_confirm: "Sicher? #{@recipe.title} unwiederruflich löschen" } %>
+</button>
 <hr>
 <%= link_to "Zurück", root_path %>
