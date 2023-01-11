@@ -1,0 +1,16 @@
+<%= form_with model: @recipe do |f| %>
+  <%= f.label "Titel" %>
+  <%= f.text_field :title %>
+
+  <%= f.label "Autor" %>
+  <%= f.text_field :author %>
+  <br>
+  <%= f.label "Beschreibung" %>
+  <br>
+  <%= f.text_area :description, size: "60x10" %>
+  <br>
+  <%= f.file_field :photo,
+    direct_upload: true %>
+
+  <%= f.submit "Rezept hinzufügen" %>
+<% end %>
