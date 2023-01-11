@@ -12,7 +12,7 @@
         <%= cl_image_tag("lu30tfaxelrsc7eyfh8a",
           width: 40, height: 30, crop: :fill) %>
       <% end %>
-      <%= recipe.title %>
+      <%= link_to recipe.title, recipe_path(recipe) %>
     </li>
   <% end %>
 </ul>
