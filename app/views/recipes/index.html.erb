@@ -1,2 +1,23 @@
 <h1>Rezeptbuch</h1>
 <p>Willkommen bei Ihrem Rezeptbuch</p>
+
+<h2>Was koche ich heute?</h2>
+<ul>
+  <% @recipes.each do | recipe |%>
+    <li>
+      <% if recipe.photo.attached? %>
+        <%= cl_image_tag(recipe.photo.key,
+        width: 40, height: 30, crop: :fill) %>
+      <% else %>
+        <%= cl_image_tag("lu30tfaxelrsc7eyfh8a",
+          width: 40, height: 30, crop: :fill) %>
+      <% end %>
+      <%= recipe.title %>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= cl_image_tag("lu30tfaxelrsc7eyfh8a",
+      width: 400, height: 300, crop: :fill) %>
