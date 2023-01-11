@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Rezeptbuch (WIP)
+Was koche ich heute?
 
-Things you may want to cover:
+* Ruby Version\
+3.1.2
 
-* Ruby version
+* Rails Version\
+7.0.4
 
-* System dependencies
+* Databenbank
+SQLite3
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Forstshritt
+10.01.2023
+### Rezept modellieren
+Geplantes Schema\
+![Final_schema](https://user-images.githubusercontent.com/2192560/211774180-5b8bc14b-f4a9-43ae-b3a0-cb6f9a061303.PNG)
+### Rezepte anzeigen
+![image](https://user-images.githubusercontent.com/2192560/211774596-af441613-7316-4226-81ad-aaa44be1977f.png)
