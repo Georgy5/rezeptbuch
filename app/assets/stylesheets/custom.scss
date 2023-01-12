@@ -1,0 +1,121 @@
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+  body {
+    font-size: 1.4rem;
+  } /*1rem = 16px*/
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.8rem;
+  }
+}
+
+/* mixins, variables, etc. */
+
+/* universal */
+body {
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* header */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+#logo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dropdown menu */
+.dropdown-menu.active {
+  display: block;
+}
+
+/* flash alerts */
+.flash {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.flash-success {
+  border: 2px solid #1EDD88;
+}
+
+.flash-warning {
+  border: 2px solid #FFC65A;
+}
+
+.flash-danger {
+  border: 2px solid #FD1015;
+}
+
+
+/* footer */
+footer{
+  color: white;
+}
+footer a{
+  color: white;
+
+}
+footer a:hover{
+  color: lightgray;
+}
+footer ul {
+  padding-left: 2rem; list-style-type: none;
+}
+footer ul li {
+  display:inline-block;
+}
+.footer {
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+  background-color: #023877;
+  text-align: center;
+}

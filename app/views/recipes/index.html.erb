@@ -1,22 +1,26 @@
-<h1>Rezeptbuch</h1>
-<p>Willkommen bei Ihrem Rezeptbuch</p>
+<h1>Willkommen bei Ihrem Rezeptbuch</h1>
 
-<%= link_to "Neues Gericht hinzufügen", new_recipe_path %>
+<%= link_to "Neues Gericht hinzufügen", new_recipe_path, 
+  class: "btn btn-primary" %>
+
+<p></p>
 
 <h2>Was koche ich heute?</h2>
-<ul>
-  <% @recipes.each do | recipe |%>
-    <li>
-      <% if recipe.photo.attached? %>
-        <%= cl_image_tag(recipe.photo.key,
-        width: 40, height: 30, crop: :fill) %>
-      <% else %>
-        <%= cl_image_tag("lu30tfaxelrsc7eyfh8a_r9pm7z",
+<div>
+  <ul class="list-unstyled">
+    <% @recipes.each do | recipe |%>
+      <li>
+        <% if recipe.photo.attached? %>
+          <%= cl_image_tag(recipe.photo.key,
           width: 40, height: 30, crop: :fill) %>
-      <% end %>
-      <%= link_to recipe.title, recipe_path(recipe) %>
-    </li>
-  <% end %>
-</ul>
+        <% else %>
+          <%= cl_image_tag("lu30tfaxelrsc7eyfh8a_r9pm7z",
+            width: 40, height: 30, crop: :fill) %>
+        <% end %>
+        <%= link_to recipe.title, recipe_path(recipe) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <hr>
