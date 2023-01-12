@@ -12,10 +12,10 @@
   <br>
   <%= f.text_area :description, size: "60x10" %>
   <br>
-  <%= f.file_field :photo,
-    direct_upload: true %>
+  <%= f.file_field :photo, direct_upload: true %>
 
-  <%= f.submit "Rezept hinzufügen" %>
+  <%= f.submit "Rezept hinzufügen", 
+    class: "btn btn-secondary" %>
 <% end %>
 
 <hr>
