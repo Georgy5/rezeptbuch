@@ -2,8 +2,12 @@ require "test_helper"
 
 class RecipeTest < ActiveSupport::TestCase
   def setup
-    @recipe  = Recipe.new(title: "Sadza", author: "Karl",
+    @user = User.new(first_name: 'Example', last_name: 'User', 
+                      email: 'user@example.com', password: "foobar", 
+                      password_confirmation: "foobar")
+    @recipe  = Recipe.new(title: "Sadza", author: @user.name,
                           description: "Vermische das Maismehl mit Wasser.")
+    @recipe.user = @user
   end
 
   test "should be valid" do
