@@ -1,22 +1,30 @@
 <%= link_to "Zurück", recipes_path %>
 <h1>Rezept hinzufügen</h1>
 
-<%= form_with model: @recipe do |f| %>
-  <%= f.label "Titel" %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label "Autor" %>
-  <%= f.text_field :author %>
-  <br>
-  <%= f.label "Beschreibung" %>
-  <br>
-  <%= f.text_area :description, size: "60x10" %>
-  <br>
-  <%= f.file_field :photo, direct_upload: true %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @recipe) do |f| %>
+      <%= render "shared/error_msgs_recipe" %>
 
-  <%= f.submit "Rezept hinzufügen", 
-    class: "btn btn-secondary" %>
-<% end %>
+        <%= f.label :title, "Titel" %>
+        <%= f.text_field :title , class: "form-control"%>
+
+        <%= f.label :author, "Autor" %>
+        <%= f.text_field :author, class: "form-control" %>
+
+        <%= f.label :description, "Beschreibung" %>
+        <%= f.text_area :description, size: "60x10", 
+          class: "form-control" %>
+
+        <%= f.label :photo, "Foto hochladen" %>
+        <%= f.file_field :photo, direct_upload: true, 
+          class: "form-control" %>
+
+      <%= f.submit "Rezept hinzufügen", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
 <hr>
 <%= link_to "Zurück", recipes_path %>
+
