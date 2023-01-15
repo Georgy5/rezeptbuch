@@ -4,7 +4,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test "invalid signup credentials" do
     assert_no_difference 'User.count' do
       post users_path,
-      params: { user: { name: "",
+      params: { user: { first_name: "",
+                        first_name: "",
                         email: "user@invalid",
                         password: "foo",
                         password_confirmation: "bar" } }
@@ -16,7 +17,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test "should throw error messages" do
     assert_no_difference 'User.count' do
       post users_path, 
-        params: { user: { name: "",
+        params: { user: { first_name: "",
+                          first_name: "",
                           email: "test@example.org",
                           password: "password",
                           password_confirmation: "foobar" } }
@@ -28,7 +30,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test "valid signup credentials" do
     assert_difference 'User.count', 1 do
       post users_path,
-      params: { user: { name: "Test User",
+      params: { user: { first_name: "Test",
+                        first_name: "User",
                         email: "user@example.com",
                         password: "password",
                         password_confirmation: "password" } }
