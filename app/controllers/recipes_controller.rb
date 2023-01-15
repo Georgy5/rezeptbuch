@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
       flash[:success] = "Rezept aktualisiert"
-      redirect_to recipes_path
+      redirect_to recipe_path(@recipe)
     else
       render 'edit', status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.find(params[:id]).destroy
-    flash[:notice] = "Rezept gelöscht"
+    flash[:danger] = "Rezept gelöscht"
     redirect_to recipes_path, status: :see_other
   end
 
