@@ -45,8 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_15_113411) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user"
-    t.string "references"
     t.integer "user_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
