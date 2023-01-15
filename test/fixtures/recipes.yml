@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: One
+  author: Fixture Max
+  description: One food example. This comes from /test/fixtures/recipes.yml
+
+two:
+  title: Two
+  author: Fixture Max
+  description: Two food. This comes from /test/fixtures/recipes.yml
