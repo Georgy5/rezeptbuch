@@ -14,8 +14,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      # TODO Implement flash messages
-      # flash[:info] = "Neues Rezept hinzugefügt"
+      flash[:success] = "Neues Rezept hinzugefügt"
       redirect_to root_url
     else
       render 'new', status: :unprocessable_entity
@@ -29,9 +28,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
-      # TODO Implement flash messages
-      # flash[:success] = "Rezept aktualisiert"
-      # redirect_to recipe_path(@recipe)
+      flash[:success] = "Rezept aktualisiert"
       redirect_to recipes_path
     else
       render 'edit', status: :unprocessable_entity
@@ -40,8 +37,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.find(params[:id]).destroy
-    # TODO Implement flash messages
-      # flash[:success] = "Rezept gelöscht"
+    flash[:notice] = "Rezept gelöscht"
     redirect_to recipes_path, status: :see_other
   end
 
