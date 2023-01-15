@@ -17,4 +17,8 @@ class User < ApplicationRecord
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
+  def name
+    fullname = "#{first_name} #{last_name}"
+  end
 end
