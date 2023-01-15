@@ -15,14 +15,17 @@ Die Cloudinary API Umgebungsvariable gegebenfalls bei mir anfragen.
 ## Rezeptbuch (WIP)
 #### Was koche ich heute?
 
-![image](https://user-images.githubusercontent.com/2192560/212006244-ea47a9e8-4a85-4077-aaf9-c2552edca872.png)
+![Layout_w_Login](https://user-images.githubusercontent.com/2192560/212553288-c2d66c79-2e71-46be-96e0-21847eebb792.PNG)
 
 ## Forstshritt
 Recipe Model\
 Recipe CRUD\
 Layout und Design\
 User Model\
-A User has 1:M Recipes
+A User has 1:N Recipes\
+Boostratp to make it responsive\
+Login and simple user authentification
+
 
 ### Datenbank Schema
 Geplantes Schema\
