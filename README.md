@@ -20,7 +20,9 @@ Die Cloudinary API Umgebungsvariable gegebenfalls bei mir anfragen.
 ## Forstshritt
 Recipe Model\
 Recipe CRUD\
-Layout und Design (WIP)
+Layout und Design\
+User Model\
+A User has 1:M Recipes
 
 ### Datenbank Schema
 Geplantes Schema\
