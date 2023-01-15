@@ -15,6 +15,9 @@
   body {
     font-size: 1.6rem;
   }
+  h1 {
+    font-size: 150%;
+  }
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -44,6 +47,11 @@ textarea {
 }
 .center h1 {
   margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0 auto;
+  text-align:center;
 }
 
 /* header */
