@@ -1,0 +1,16 @@
+<% @recipes.each do | recipe |%>
+  <li>
+    <div class="card-product">
+      <% if recipe.photo.attached? %>
+        <%= cl_image_tag(recipe.photo.key,
+        width: 80, height: 60, crop: :fill) %>
+      <% else %>
+        <%= image_tag("recipe_placeholder",
+          width: 80, height: 60, crop: :fill) %>
+      <% end %>
+      <div class="card-product-infos">
+        <%= link_to recipe.title, recipe_path(recipe), class: "card-title" %>
+      </div>
+    </div>
+  </li>
+<% end %>
