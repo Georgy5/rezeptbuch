@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 offset-md-3">
-    <%= form_with(model: @recipe) do |f| %>
+    <%= form_with(model: [@user, @recipe] ) do |f| %>
       <%= render "shared/error_msgs_recipe" %>
 
         <%= f.label :title, "Titel" %>
