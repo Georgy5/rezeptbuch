@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+  before_action :logged_in_user, only: [:create, :edit, :destroy]
+  before_action :correct_user,   only: :destroy
+
   def index
     @recipes = Recipe.all.order("created_at DESC")
   end
@@ -45,6 +48,11 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :author,
-      :description, :photo)
+      :description, :photo, :user_id)
+  end
+
+  def correct_user
+    @recipe = current_user.recipes.find_by(id: params[:id])
+    redirect_to(root_url, status: :see_other) if @recipe.nil?
   end
 end
