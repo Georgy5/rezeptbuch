@@ -10,14 +10,16 @@ namespace :fly do
   #  - changes to the filesystem made here are DISCARDED
   #  - full access to secrets, databases
   #  - failures here prevent deployment
-  task :release
+  task :release => 'db:migrate'
 
   # SERVER step:
   #  - changes to the filesystem made here are deployed
   #  - full access to secrets, databases
   #  - failures here result in VM being stated, shutdown, and rolled back
   #    to last successful deploy (if any).
-  task :server => 'db:migrate' do
+  task :server => 'assets:precompile'
+  task :server => 'db:migrate'
+  task :server => :swapfile do
     sh 'bin/rails server'
   end
 
