@@ -1,4 +1,4 @@
-# fly.toml file generated for rezeptbuch on 2023-01-22T22:33:35+01:00
+# fly.toml file generated for rezeptbuch on 2023-01-22T22:44:35+01:00
 
 app = "rezeptbuch"
 kill_signal = "SIGINT"
@@ -15,6 +15,10 @@ processes = []
 
 [env]
   PORT = "8080"
+
+[mounts]
+  source="rezept_data"
+  destination="/mnt/rezept_data"
 
 [experimental]
   auto_rollback = true
@@ -48,7 +52,3 @@ processes = []
 [[statics]]
   guest_path = "/app/public"
   url_prefix = "/"
-
-[mounts]
-  source="rezept_data"
-  destination="/mnt/rezept_data"
