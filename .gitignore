@@ -37,6 +37,10 @@
 # Ignore environment variables
 .env*
 
+# Ignore fly.io files
+fly.toml
+.dockerignore
+
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
