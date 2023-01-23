@@ -15,6 +15,7 @@ processes = []
 
 [env]
   PORT = "8080"
+  CLOUDINARY_URL = cloudinary://754558396778437:SAIajqX1B1qGebTl8cA_2ULPNnk@devkeller
 
 [mounts]
   source="rezept_data"
