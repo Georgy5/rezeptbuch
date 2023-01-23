@@ -16,7 +16,7 @@
             <%= cl_image_tag(recipe.photo.key,
             width: 40, height: 30, crop: :fill) %>
           <% else %>
-            <%= image_tag("recipe_placeholder",
+            <%= image_tag("recipe_placeholder.jpg",
               width: 40, height: 30, crop: :fill) %>
           <% end %>
           <%= link_to recipe.title, recipe_path(recipe) %>
