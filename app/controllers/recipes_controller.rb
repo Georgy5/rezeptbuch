@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
       flash[:success] = "Neues Rezept hinzugefügt"
-      redirect_to root_url
+      redirect_to recipe_path(@recipe)
     else
       render 'new', status: :unprocessable_entity
     end
