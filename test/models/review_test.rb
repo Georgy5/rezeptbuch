@@ -15,4 +15,14 @@ class ReviewTest < ActiveSupport::TestCase
   test "should be valid" do
     assert @review.valid?
   end
+
+  test "rating should be present" do
+    @review.rating = nil
+    assert_not @review.valid?
+  end
+
+  test "rating should be in range 1-5" do
+    @review.rating = 6
+    assert_not @review.valid?
+  end
 end
