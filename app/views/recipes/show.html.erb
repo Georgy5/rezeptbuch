@@ -12,6 +12,9 @@
       <h2>Beschreibung</h2>
       <p><%= @recipe.description %></p>
       <p><%= render "show_photo" %></p>
+      <small><p>Erstellungsdatum: 
+        <%= @recipe.created_at.strftime("%d.%m.%Y") %>
+      </p></small>
       
       <%= link_to "Rezept löschen", recipe_path(@recipe),
       data: { "turbo-method": :delete,
