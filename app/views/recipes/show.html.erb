@@ -5,8 +5,10 @@
   <div class="col-md-6 offset-md-3">
     <p>Autor: <%= @recipe.author %></p>
 
-    <%= link_to "Rezept anpassen", edit_recipe_path(@recipe),
-      class: "btn btn-secondary" %>
+    <% if @recipe.user = current_user %>
+      <%= link_to "Rezept anpassen", edit_recipe_path(@recipe),
+        class: "btn btn-secondary" %>
+    <% end %>
 
     <div>
       <h2>Beschreibung</h2>
@@ -16,10 +18,12 @@
         <%= @recipe.created_at.strftime("%d.%m.%Y") %>
       </p></small>
       
-      <%= link_to "Rezept löschen", recipe_path(@recipe),
-      data: { "turbo-method": :delete,
-        turbo_confirm: "Sicher? #{@recipe.title} unwiederruflich löschen" },
-        class: "btn btn-danger" %>
+      <% if @recipe.user = current_user %>
+        <%= link_to "Rezept löschen", recipe_path(@recipe),
+        data: { "turbo-method": :delete,
+          turbo_confirm: "Sicher? #{@recipe.title} unwiederruflich löschen" },
+          class: "btn btn-danger" %>
+      <% end %>
     </div>
   </div>
 </div>
