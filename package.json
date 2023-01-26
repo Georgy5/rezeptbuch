@@ -8,7 +8,8 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "esbuild": "^0.16.16",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "star-rating.js": "^4.3.0"
   },
   "scripts": {
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
