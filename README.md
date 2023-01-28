@@ -27,6 +27,8 @@ A User has 1:N Recipes\
 Boostratp to make it responsive\
 Login and simple user authentification
 
+Bemerkung: Diese app benutzt esbuild anstatt Importmaps
+
 
 ### Datenbank Schema
 Geplantes Schema\
