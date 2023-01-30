@@ -5,7 +5,7 @@
   <div class="col-md-6 offset-md-3">
     <p>Autor: <%= @recipe.author %></p>
 
-    <% if @recipe.user = current_user %>
+    <% if @recipe.user == current_user %>
       <%= link_to "Rezept anpassen", edit_recipe_path(@recipe),
         class: "btn btn-secondary" %>
     <% end %>
@@ -18,7 +18,7 @@
         <%= @recipe.created_at.strftime("%d.%m.%Y") %>
       </p></small>
       
-      <% if @recipe.user = current_user %>
+      <% if @recipe.user == current_user %>
         <%= link_to "Rezept löschen", recipe_path(@recipe),
         data: { "turbo-method": :delete,
           turbo_confirm: "Sicher? #{@recipe.title} unwiederruflich löschen" },
