@@ -5,23 +5,25 @@
   <div class="col-md-6 offset-md-3">
     <%= form_with(model: @recipe) do |f| %>
       <%= f.label "Titel" %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "form-control" %>
 
       <%= f.label "Autor" %>
-      <%= f.text_field :author %>
-      <br>
+      <%= f.text_field :author, class: "form-control" %>
       <%= f.label "Beschreibung" %>
-      <br>
-      <%= f.text_area :description, size: "60x10" %>
-      <%= render "show_photo" %>
-      <br>
+
+      <%= f.text_area :description, size: "60x10",
+        class: "form-control" %>
+      <%= render "show_photo"%>
       <%= f.label "Foto ändern?" %>
-      <br>
-      <%= f.file_field :photo, direct_upload: true %>
+
+      <%= f.file_field :photo, direct_upload: true,
+        class: "form-control" %>
 
       <%= f.submit "Änderungen speichern", 
-        class: "btn btn-secondary" %>
+        class: "btn btn-primary" %>
     <% end %>
+    <%= link_to "Abbrechen", root_path, 
+      class: "btn btn-secondary w-100 mb-3" %>
   </div>
 </div>
 

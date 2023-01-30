@@ -6,22 +6,24 @@
     <%= form_with(model: [@user, @recipe] ) do |f| %>
       <%= render "shared/error_msgs_recipe" %>
 
-        <%= f.label :title, "Titel" %>
-        <%= f.text_field :title , class: "form-control"%>
+      <%= f.label :title, "Titel" %>
+      <%= f.text_field :title, class: "form-control" %>
 
-        <%= f.label :author, "Autor" %>
-        <%= f.text_field :author, class: "form-control" %>
+      <%= f.label :author, "Autor" %>
+      <%= f.text_field :author, class: "form-control" %>
 
-        <%= f.label :description, "Beschreibung" %>
-        <%= f.text_area :description, size: "60x10", 
-          class: "form-control" %>
+      <%= f.label :description, "Beschreibung" %>
+      <%= f.text_area :description, size: "60x10", 
+        class: "form-control" %>
 
-        <%= f.label :photo, "Foto hochladen" %>
-        <%= f.file_field :photo, direct_upload: true, 
-          class: "form-control" %>
+      <%= f.label :photo, "Foto hochladen" %>
+      <%= f.file_field :photo, direct_upload: true, 
+        class: "form-control" %>
 
       <%= f.submit "Rezept hinzufügen", class: "btn btn-primary" %>
     <% end %>
+    <%= link_to "Abbrechen", root_path, 
+      class: "btn btn-secondary w-100 mb-3" %>
   </div>
 </div>
 

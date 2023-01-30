@@ -7,7 +7,7 @@
 
     <% if @recipe.user == current_user %>
       <%= link_to "Rezept anpassen", edit_recipe_path(@recipe),
-        class: "btn btn-secondary" %>
+        class: "btn btn-primary mb-3" %>
     <% end %>
 
     <div>
@@ -22,7 +22,7 @@
         <%= link_to "Rezept löschen", recipe_path(@recipe),
         data: { "turbo-method": :delete,
           turbo_confirm: "Sicher? #{@recipe.title} unwiederruflich löschen" },
-          class: "btn btn-danger" %>
+          class: "btn btn-danger mb-3" %>
       <% end %>
     </div>
   </div>
