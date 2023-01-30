@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :logged_in_user, only: [:create, :edit, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :destroy]
 
   def index
     @recipes = Recipe.all.order("created_at DESC")
@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user if current_user
     if @recipe.save
       flash[:success] = "Neues Rezept hinzugefügt"
       redirect_to recipe_path(@recipe)
