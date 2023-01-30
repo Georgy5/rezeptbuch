@@ -1,11 +1,21 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-6 offset-md-3">
-    <section class="user_info">
+  <div class="col-md-6 offset-md-3 p-3">
+    <section class="user_info overflow-hidden">
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
     </section>
-  </aside>
+    <div class="center p-3">
+        <%= link_to "Rezepte anzeigen", root_path, 
+          class: "btn btn-primary" %>
+    </div>
+    <div class="center p-3">
+      <% if @user == current_user %>
+        <%= link_to "Neues Gericht hinzufügen", new_recipe_path, 
+          class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
