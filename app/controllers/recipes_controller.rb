@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @rating = helpers.recipe_rating @recipe
   end
 
   def new
