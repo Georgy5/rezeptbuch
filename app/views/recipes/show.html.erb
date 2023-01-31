@@ -11,6 +11,12 @@
     <% end %>
 
     <div>
+      <div class="rating">
+        <% @rating.times do %>
+          <i class="bi bi-star-fill"></i>
+        <% end %>
+      </div>
+
       <h2>Beschreibung</h2>
       <p><%= @recipe.description %></p>
       <p><%= render "show_photo" %></p>
