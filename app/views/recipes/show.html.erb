@@ -11,10 +11,21 @@
     <% end %>
 
     <div>
-      <div class="rating">
-        <% @rating.times do %>
-          <i class="bi bi-star-fill"></i>
-        <% end %>
+      <div class="rating mb-3">
+        <% ratings = @recipe.reviews %>
+        <div>
+          <% @rating.times do %>
+            <i class="bi bi-star-fill"></i>
+          <% end %>
+          <% if ratings.empty? %>
+            <em>Keine Bewertung</em>
+          <% else %>
+            (<%= ((ratings.map { |r| r.rating }.sum.to_f) / ratings.length).round(1) %>)
+          <% end %>
+        </div>
+        <div>
+          <em><%= "#{ratings.length} Bewertungen" %></em>
+        </div>
       </div>
 
       <h2>Beschreibung</h2>
