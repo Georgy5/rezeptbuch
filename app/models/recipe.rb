@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
-  has_one_attached :photo
   belongs_to :user, optional: true
+  has_one_attached :photo
+  has_many :reviews, dependent: :destroy
   
   validates :title, presence: true
   validates :author, presence: true

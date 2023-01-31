@@ -1,0 +1,30 @@
+<%= link_to "Zurück", recipe_path(@recipe) %>
+
+<div class="row">
+  <div class="col-xs-4 col-md-6 offset-md-3">
+    <h2><%= @recipe.title %></h2>
+
+    <%= form_with(model: [@recipe, @review] ) do |f| %>
+
+      <% if @review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@review.errors.count, "Fehler") %> beim speichern dieser Bewertung:</h2>
+          <ul>
+          <% @review.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.label :title, "Rezept bewerten" %>
+      <%= f.select :rating, (1..5).to_a, 
+        label: "1 - 5", class: "form-control" %>
+
+      <%= f.submit "Bewertung abgeben", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+<% console %>
