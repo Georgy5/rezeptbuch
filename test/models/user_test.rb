@@ -28,6 +28,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test 'return full name' do
+    assert_equal 'Example User', @user.name
+  end
+
   test 'email should not be too long' do
     @user.email = 'a' * 244 + '@example.com'
     assert_not @user.valid?
