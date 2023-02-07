@@ -17,14 +17,20 @@
           <% @rating.times do %>
             <i class="bi bi-star-fill"></i>
           <% end %>
-          <% if ratings.empty? %>
-            <em>Keine Bewertung</em>
-          <% else %>
+          <% if ratings.present? %>
             (<%= ((ratings.map { |r| r.rating }.sum.to_f) / ratings.length).round(1) %>)
           <% end %>
         </div>
         <div>
-          <em><%= "#{ratings.length} Bewertungen" %></em>
+          <em><%= pluralize_reviews_de(ratings.length) %></em>
+        </div>
+        <div>
+          <% if ratings.empty? %>
+            <em>
+            <%= link_to "Sei der erste", new_recipe_review_path(@recipe),
+              style: "text-decoration: none;" %>
+            </em>
+          <% end %>
         </div>
       </div>
 
