@@ -6,4 +6,8 @@ class Recipe < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   validates :description, presence: true
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end
