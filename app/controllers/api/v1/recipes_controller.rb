@@ -1,4 +1,4 @@
-class Api::V1::RecipesController < ActionController::API
+class Api::V1::RecipesController < Api::V1::BaseController
   def index
     @recipes = Recipe.all.order("created_at DESC")
     render json: @recipes
