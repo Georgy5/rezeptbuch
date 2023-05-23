@@ -25,7 +25,8 @@ Layout und Design\
 User Model\
 A User has 1:N Recipes\
 Boostratp to make it responsive\
-Login and simple user authentification
+Login and simple user authentification\
+Public API
 
 Bemerkung: Diese app benutzt esbuild anstatt Importmaps
 
@@ -50,6 +51,16 @@ DB Schema mit Active Storage (für Cloudinary)
 
 * How to run the test suite:\
   Run `bin/rails test:all`
+
+## Public API
+Anyone can fetch recipe data.
+#### JSON Response
+Get all recipes
+rezeptbuch.fly.dev/api/v1/recipes
+
+For a specific recipe, include the recipe ID
+rezeptbuch.fly.dev/api/v1/recipes/:id
+eg rezeptbuch.fly.dev/api/v1/recipes/8
   
 ## Getting Started
 
