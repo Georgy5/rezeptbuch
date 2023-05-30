@@ -55,13 +55,13 @@ DB Schema mit Active Storage (für Cloudinary)
 ## Public API
 Anyone can fetch recipe data.
 #### JSON Response
-Get all recipes
-rezeptbuch.fly.dev/api/v1/recipes
+Get all recipes\
+[rezeptbuch.fly.dev/api/v1/recipes](https://rezeptbuch.fly.dev/api/v1/recipes)
 
-For a specific recipe, include the recipe ID
-rezeptbuch.fly.dev/api/v1/recipes/:id
-eg rezeptbuch.fly.dev/api/v1/recipes/8
-  
+For a specific recipe, include the recipe ID\
+[rezeptbuch.fly.dev/api/v1/recipes/:id](https://rezeptbuch.fly.dev/api/v1/recipes/:id)\
+eg, [rezeptbuch.fly.dev/api/v1/recipes/8](https://rezeptbuch.fly.dev/api/v1/recipes/8)
+
 ## Getting Started
 
 To get a local copy up and running follow these steps.
