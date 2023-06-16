@@ -11,8 +11,12 @@ puts "Note: Users were not removed!"
 
 # Create a User to author some recipes
 puts "Creating a User"
-user = User.create(first_name: "Max", last_name: "Mustermann", email: "max@example.com",
-          password: 'foobar', password_confirmation: 'foobar')
+if User.count == 0
+  user = User.create(first_name: "Max", last_name: "Mustermann", email: "max@example.com",
+          password: "foobar", password_confirmation: "foobar")
+else
+  user = User.find_by id: 1
+end
 
 # Create around 5 or more recipes
 puts "Creating 8 fake recipes..."
