@@ -7,6 +7,8 @@ class Recipe < ApplicationRecord
   validates :author, presence: true
   validates :description, presence: true
 
+  scope :ordered, -> { order(created_at: :desc) }
+
   def to_param
     "#{id}-#{title.parameterize}"
   end
