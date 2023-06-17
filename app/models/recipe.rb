@@ -7,6 +7,8 @@ class Recipe < ApplicationRecord
   validates :author, presence: true
   validates :description, presence: true
 
+  broadcasts_to -> (recipe) { "recipes" }, inserts_by: :prepend
+
   def to_param
     "#{id}-#{title.parameterize}"
   end
