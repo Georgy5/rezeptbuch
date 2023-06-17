@@ -9,12 +9,12 @@ class ReviewsController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @review = @recipe.reviews.new(review_params)
-    @review.user = current_user
-    if @review.save!
+    @review.user = current_user if current_user
+    if @review.save
       redirect_to recipe_path(@recipe)
     else
-      flash[:alert] = "Bewertung konnte nicht abgegeben werden."
-      render 'new', status: :unprocessable_entity
+      flash.now[:alert] = "Bewertung konnte nicht abgegeben werden."
+      render :new, status: :unprocessable_entity 
     end
   end
 

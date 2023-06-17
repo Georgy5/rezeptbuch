@@ -11,28 +11,17 @@
     <% end %>
 
     <div>
-      <div class="rating mb-3">
-        <% ratings = @recipe.reviews %>
-        <div>
-          <% @rating.times do %>
-            <i class="bi bi-star-fill"></i>
-          <% end %>
-          <% if ratings.present? %>
-            (<%= ((ratings.map { |r| r.rating }.sum.to_f) / ratings.length).round(1) %>)
-          <% end %>
+      <%# render "ratings" %>
+      <%# turbo_frame_tag "rating", src: new_recipe_review_path(@recipe) %>
+      <%= turbo_frame_tag :reviews do %>
+        <div class="d-flex justify-content-between">
+          <%= render "ratings" %>
+          <div>
+            <%= link_to "Bewertung abgeben", new_recipe_review_path(@recipe),
+              class: "btn btn-secondary  mb-3" %>
+          </div>
         </div>
-        <div>
-          <em><%= pluralize_reviews_de(ratings.length) %></em>
-        </div>
-        <div>
-          <% if ratings.empty? %>
-            <em>
-            <%= link_to "Sei der erste", new_recipe_review_path(@recipe),
-              style: "text-decoration: none;" %>
-            </em>
-          <% end %>
-        </div>
-      </div>
+      <% end %>
 
       <h2>Beschreibung</h2>
       <p><%= @recipe.description %></p>
