@@ -15,7 +15,7 @@
         <%= link_to "Bewertung anzeigen", recipe_path(@recipe), class: "btn btn-secondary" %>
       <% else %>
 
-      <div class="col-xs-3 col-md-4 offset-md-2">
+      <div class="col-xs-5 col-md-6 offset-md-2">
         <%= f.label :title, "Rezept bewerten" %>
         <%= f.select :rating, (1..5).to_a, 
           label: "1 - 5", class: "form-control" %>
