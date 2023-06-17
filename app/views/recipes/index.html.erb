@@ -9,21 +9,8 @@
     <p></p>
 
     <h2>Was koche ich heute?</h2>
-    <ul class="list-unstyled">
-      <% @recipes.each do | recipe |%>
-        <li>
-          <% if recipe.photo.attached? %>
-            <%= cl_image_tag(recipe.photo.key,
-            width: 40, height: 30, crop: :fill) %>
-          <% else %>
-            <%= image_tag("recipe_placeholder.jpg",
-              width: 40, height: 30, crop: :fill) %>
-          <% end %>
-          <%= link_to recipe.title, recipe_path(recipe) %>
-        </li>
-      <% end %>
-    </ul>
+    <%= turbo_frame_tag "recipes" do %>
+      <%= render @recipes %>
+    <% end %>
   </div>
 </div>
-
-<hr>

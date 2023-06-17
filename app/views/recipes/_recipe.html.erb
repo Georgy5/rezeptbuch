@@ -1,0 +1,12 @@
+<%= turbo_frame_tag recipe do %>
+  <div class="recipe">
+    <% if recipe.photo.attached? %>
+      <%= cl_image_tag(recipe.photo.key,
+      width: 40, height: 30, crop: :fill) %>
+    <% else %>
+      <%= image_tag("recipe_placeholder.jpg",
+        width: 40, height: 30, crop: :fill) %>
+    <% end %>
+    <%= link_to recipe.title, recipe_path(recipe) %>
+  </div>
+<% end %>
