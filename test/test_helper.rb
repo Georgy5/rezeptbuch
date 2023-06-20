@@ -13,6 +13,9 @@ class ActiveSupport::TestCase
   def is_logged_in?
     !session[:user_id].nil?
   end
+
+  # Folder path for screenshots
+  Capybara.save_path = Rails.root.join("tmp/capybara")
 end
 
 class ActionDispatch::IntegrationTest
