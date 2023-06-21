@@ -12,4 +12,8 @@ class Recipe < ApplicationRecord
   def to_param
     "#{id}-#{title.parameterize}"
   end
+
+  def recipe_rating
+    rating = self.reviews.average(:rating).to_i()
+  end
 end

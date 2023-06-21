@@ -1,9 +1,5 @@
 module RecipesHelper
-  def recipe_rating(recipe)
-    reviews = recipe.reviews
-    rating = reviews.average(:rating).to_i()
-  end
-
+  # TODO Use Rails pluralisation instead
   def pluralize_reviews_de(rating)
     if rating == 1
       "#{rating}e Bewertung"
