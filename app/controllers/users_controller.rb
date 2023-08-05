@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       reset_session
       helpers.log_in @user
       flash[:success] = "Willkommen zum Rezeptbuch!"
-      redirect_to @user
+      redirect_to root_url
     else
       render "new", status: :unprocessable_entity
     end
