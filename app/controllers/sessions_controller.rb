@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       reset_session
       log_in user
-      redirect_back_or user
+      redirect_back_or root_url
     else
       flash.now[:danger] = "Invalid email/password combination."
       render "new", status: :unprocessable_entity
