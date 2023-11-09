@@ -45,3 +45,7 @@ fly.toml
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Ignore default Litestack SQLite databases.
+/db/**/*.sqlite3
+/db/**/*.sqlite3-*
