@@ -1,5 +1,4 @@
-<%= turbo_frame_tag "rating" do %>
-<div class="rating mb-3">
+<div class="rating mb-3 pb-3">
   <% ratings = @recipe.reviews %>
   <div>
     <% @rating.times do %>
@@ -21,4 +20,3 @@
     <% end %>
   </div>
 </div>
-<% end %>
