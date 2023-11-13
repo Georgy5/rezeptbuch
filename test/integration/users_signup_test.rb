@@ -37,7 +37,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                         password_confirmation: "password" } }
     end
     follow_redirect!
-    assert_template 'users/show'
+    assert_template 'recipes/index'
+    assert_select "a[href=?]", login_path, count: 0
+    assert_select "a[href=?]", logout_path
     assert_not flash.empty?
     assert is_logged_in?
   end
