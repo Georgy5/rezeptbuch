@@ -47,6 +47,9 @@ gem "bootsnap", require: false
 # Image hosting
 gem "cloudinary"
 
+# Dockerfile generator for Rails
+gem "dockerfile-rails", "~> 1.5"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
