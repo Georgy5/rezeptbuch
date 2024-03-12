@@ -92,7 +92,7 @@ To get a local copy up and running follow these steps.
 ## Versionen
 
 * Ruby Version\
-3.2.2
+3.3.0
 
 * Rails Version\
 7.1.2
