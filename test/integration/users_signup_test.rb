@@ -13,7 +13,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
     assert_template 'users/new'
   end
-  
+
   test "should throw error messages" do
     assert_no_difference 'User.count' do
       post users_path, 
@@ -37,7 +37,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                         password_confirmation: "password" } }
     end
     follow_redirect!
-    assert_template 'users/show'
+    assert_template 'recipes/index'
     assert_not flash.empty?
     assert is_logged_in?
   end
