@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "~> 3.2.0"
+ruby "~> 3.3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
@@ -9,7 +9,7 @@ gem "rails", "~> 7.1.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "sqlite3", "~> 1.6"
 
 # Use Litestack as all-in-one solution for caching and job queuing
 gem "litestack", "~> 0.4.1"
