@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = get_recipe(params[:id])
     @rating = helpers.recipe_rating @recipe
   end
 
@@ -26,11 +26,11 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    @recipe = get_recipe(params[:id])
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
+    @recipe = get_recipe(params[:id])
     if @recipe.update(recipe_params)
       flash[:success] = "Rezept aktualisiert"
       redirect_to recipe_path(@recipe)
@@ -40,12 +40,16 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    Recipe.find(params[:id]).destroy
+    get_recipe(params[:id]).destroy
     flash[:danger] = "Rezept gelöscht"
     redirect_to recipes_path, status: :see_other
   end
 
   private
+
+  def get_recipe(recipe_id)
+    Recipe.find(recipe_id)
+  end
 
   def recipe_params
     params.require(:recipe).permit(:title, :author,
