@@ -95,7 +95,7 @@ To get a local copy up and running follow these steps.
 3.3.0
 
 * Rails Version\
-7.1.2
+7.1.3
 
-* Databenbank
-SQLite3
+* Databenbank\
+LiteStack litedb (SQLite3)
