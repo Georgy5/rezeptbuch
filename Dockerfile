@@ -2,7 +2,8 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.0
-FROM ruby:$RUBY_VERSION-slim as base
+ARG VARIANT=jemalloc-slim
+FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-${VARIANT} as base
 
 # Rails app lives here
 WORKDIR /rails
@@ -77,6 +78,9 @@ USER rails:rails
 ENV DATABASE_URL="sqlite3:///mnt/rezept_data/production.sqlite" \
     LD_PRELOAD="libjemalloc.so.2" \
     MALLOC_CONF="dirty_decay_ms:1000,narenas:2,background_thread:true"
+
+# Adjust permissions to be able to access the database
+RUN chown -R rails:rails /mnt/rezept_data
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
